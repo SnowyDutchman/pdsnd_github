@@ -159,20 +159,20 @@ def time_stats(df):
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
-    print('\nCalculating The Most Popular Stations and Trip...\n')
+    print('\nCalculating the most popular stations and trips...\n')
     start_time = time.time()
 
     print()
-    print('The most commonly used start station was: {}'.format(df['Start Station'].mode()[0]))
+    print('The most commonly used start_station was: {}'.format(df['Start Station'].mode()[0]))
 
     print()
-    print('Most commonly used end station was: {}'.format(df['End Station'].mode()[0]))
+    print('The most commonly used end_station was: {}'.format(df['End Station'].mode()[0]))
 
     print()
     most_freq_station_comb = df['Start Station'] + ' to ' + df['End Station']
-    print('The most frequnt combination of start station to end station trip was: {}'.format(most_freq_station_comb.mode()[0]))
+    print('The most frequnt combination of start_station to end_station trip was: {}'.format(most_freq_station_comb.mode()[0]))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis query took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
