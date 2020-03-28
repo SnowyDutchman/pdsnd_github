@@ -1,6 +1,6 @@
-# Project created: 3/6/2020
+### Project created: 3/6/2020
 
-### Bike Share Data Analysis Project
+# Bike Share Data Analysis Project
 
 ## Description
 This project allows a user to interact with a bike share database for the cities of Chicago, New York City, and Washington and to perform simple data analysis upon that database.
