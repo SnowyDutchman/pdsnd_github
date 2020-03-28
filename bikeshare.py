@@ -40,7 +40,7 @@ def get_filters():
         city = input("Enter: 'Chicago', 'New York City', or 'Washington' - ").lower()
         print()
         if city not in CITY_DATA:
-            print("**ERROR** Please enter 'Chicago', 'New York City', or 'Washington'")
+            print("**ERROR!** Please enter 'Chicago', 'New York City', or 'Washington'")
             continue
         city = CITY_DATA[city]
         break
@@ -53,7 +53,7 @@ def get_filters():
         elif f1 =='no':
             f1 = False
         else:
-            print("You did not enter a valid choice. Please enter 'yes' or 'no'.")
+            print("You did not enter a valid choice! Please enter 'yes' or 'no'.")
             continue
         break
 
@@ -66,7 +66,7 @@ def get_filters():
                 month = input("Enter: 'January', 'February', 'March', 'April', 'May', 'June' - ").lower()
                 print()
                 if month not in MONTH_DATA:
-                    print('**ERROR** We do not have data for that month. Please enter one of the months listed above')
+                    print('**ERROR!** We do not have data for that month. Please enter one of the months listed above')
                     continue
                 month = MONTH_DATA[month]
                 day ='all'
@@ -75,7 +75,7 @@ def get_filters():
                 day = input("Enter: 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' - ").lower()
                 print()
                 if day not in WEEK_DATA:
-                    print('**ERROR** Please check your spelling and/or enter the full name of the day as listed above')
+                    print('**ERROR!** Please check your spelling and/or enter the full name of the day as listed above')
                     continue
                 day = WEEK_DATA[day]
                 month ='all'
@@ -84,18 +84,18 @@ def get_filters():
                 month = input('January, February, March, April, May, June - ').lower()
                 print()
                 if month not in MONTH_DATA:
-                    print('**ERROR** We do not have data for that month. Please enter one of the months listed above')
+                    print('**ERROR!** We do not have data for that month. Please enter one of the months listed above')
                     continue
                 month = MONTH_DATA[month]
                 print('And which day of the week would you like to analyze?')
                 day = input('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday - ').lower()
                 print()
                 if day not in WEEK_DATA:
-                    print('**ERROR** Please check your spelling and/or enter the full name of the day as listed above')
+                    print('**ERROR!** Please check your spelling and/or enter the full name of the day as listed above')
                     continue
                 day = WEEK_DATA[day]
             else:
-                print('**ERROR** We do not have data for that entry. Please try again')
+                print('**ERROR!** We do not have data for that entry. Please try again')
                 continue
             break
         else:
@@ -162,20 +162,20 @@ def time_stats(df):
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
-    print('\nCalculating The Most Popular Stations and Trip...\n')
+    print('\nCalculating the most popular stations and trips...\n')
     start_time = time.time()
 
     print()
-    print('The most commonly used start station was: {}'.format(df['Start Station'].mode()[0]))
+    print('The most commonly used start_station was: {}'.format(df['Start Station'].mode()[0]))
 
     print()
-    print('Most commonly used end station was: {}'.format(df['End Station'].mode()[0]))
+    print('The most commonly used end_station was: {}'.format(df['End Station'].mode()[0]))
 
     print()
     most_freq_station_comb = df['Start Station'] + ' to ' + df['End Station']
-    print('The most frequnt combination of start station to end station trip was: {}'.format(most_freq_station_comb.mode()[0]))
+    print('The most frequnt combination of start_station to end_station trip was: {}'.format(most_freq_station_comb.mode()[0]))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis query took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -201,7 +201,7 @@ def trip_duration_stats(df):
 def user_stats(df):
     """Displays statistics on bikeshare users."""
 
-    print('\nCalculating User Stats...\n')
+    print('\nCalculating User Statistics...\n')
     start_time = time.time()
 
     print()
@@ -212,7 +212,7 @@ def user_stats(df):
 
     print()
     if 'Gender' not in df:
-        print('User gender data not avalible for this city')
+        print('Sorry, user gender data not avalible for this city')
     else:
         gender_of_users = df.groupby('Gender', as_index=False).count()
         print('The user gender counts are: ')
@@ -221,14 +221,14 @@ def user_stats(df):
 
     print()
     if 'Birth Year' not in df:
-        print('User birth data is not available for this city.')
+        print('Sorry, user birth data is not available for this city.')
     else:
         birth = df.groupby('Birth Year', as_index=False).count()
-        print('Earliest year of birth was: {}.'.format(int(birth['Birth Year'].min())))
-        print('Most recent year of birth was: {}.'.format(int(birth['Birth Year'].max())))
-        print('Most common year of birth year was: {}.'.format(int(birth.iloc[birth['Start Time'].idxmax()]['Birth Year'])))
+        print('The earliest year of birth was: {}.'.format(int(birth['Birth Year'].min())))
+        print('The most recent year of birth was: {}.'.format(int(birth['Birth Year'].max())))
+        print('The most common year of birth year was: {}.'.format(int(birth.iloc[birth['Start Time'].idxmax()]['Birth Year'])))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis query took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 def display_raw_data(df):
@@ -239,7 +239,7 @@ def display_raw_data(df):
     elif d1 == 'no':
         d1 = False
     else:
-        print("**ERROR** Please enter 'yes' or 'no' ")
+        print("**ERROR!** Please enter 'yes' or 'no' ")
         display_data(df)
         return
 
@@ -254,7 +254,7 @@ def display_raw_data(df):
             elif d1 == 'no':
                 break
             else:
-                print("**ERROR** Please enter 'yes' or 'no' ")
+                print("**ERROR!** Please enter 'yes' or 'no' ")
                 return
 
 
