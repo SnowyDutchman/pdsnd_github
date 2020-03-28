@@ -1,15 +1,13 @@
-### Date created
-Project created: 3/6/2020
+### Project created: 3/6/2020
 
-### Project Title
-BikeShare Data Analysis
+### Bike Share Data Analysis for Chicago, Washington, and New York City
 
 ### Description
 This project allows a user to interact with a bike share database and to perform simple analysis upon that data.
 
 ### Files used
-chicago.csv
-new_york_city.csv
+chicago.csv,
+new_york_city.csv,
 washington.csv
 
 ### Credits
