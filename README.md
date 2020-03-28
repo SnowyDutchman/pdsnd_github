@@ -1,9 +1,9 @@
-Project created: 3/6/2020 
+Project created: 3/6/2020
 
 BikeShare Analysis
 
 ### Description
-Describe what your project is about and what it does
+This project allows a user to interact with a bike share database and to perform simple analysis upon that data.
 
 ### Files used
 Include the files used
