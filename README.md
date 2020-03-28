@@ -1,12 +1,21 @@
+### Date created
 Project created: 3/6/2020
 
-BikeShare Analysis
+### Project Title
+BikeShare Data Analysis
 
 ### Description
 This project allows a user to interact with a bike share database and to perform simple analysis upon that data.
 
 ### Files used
-Include the files used
+chicago.csv
+new_york_city.csv
+washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+While most of this project was completed independently, when I became stuck, I used hints and tips from many subpages of the following resources:
+
+- w3schools.com
+- geeksforgeeks.org
+- stackoverflow.com
+- github.com
