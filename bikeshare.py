@@ -37,7 +37,7 @@ def get_filters():
         city = input("Enter: 'Chicago', 'New York City', or 'Washington' - ").lower()
         print()
         if city not in CITY_DATA:
-            print("**ERROR** Please enter 'Chicago', 'New York City', or 'Washington'")
+            print("**ERROR!** Please enter 'Chicago', 'New York City', or 'Washington'")
             continue
         city = CITY_DATA[city]
         break
@@ -50,7 +50,7 @@ def get_filters():
         elif f1 =='no':
             f1 = False
         else:
-            print("You did not enter a valid choice. Please enter 'yes' or 'no'.")
+            print("You did not enter a valid choice! Please enter 'yes' or 'no'.")
             continue
         break
 
@@ -63,7 +63,7 @@ def get_filters():
                 month = input("Enter: 'January', 'February', 'March', 'April', 'May', 'June' - ").lower()
                 print()
                 if month not in MONTH_DATA:
-                    print('**ERROR** We do not have data for that month. Please enter one of the months listed above')
+                    print('**ERROR!** We do not have data for that month. Please enter one of the months listed above')
                     continue
                 month = MONTH_DATA[month]
                 day ='all'
@@ -72,7 +72,7 @@ def get_filters():
                 day = input("Enter: 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' - ").lower()
                 print()
                 if day not in WEEK_DATA:
-                    print('**ERROR** Please check your spelling and/or enter the full name of the day as listed above')
+                    print('**ERROR!** Please check your spelling and/or enter the full name of the day as listed above')
                     continue
                 day = WEEK_DATA[day]
                 month ='all'
@@ -81,18 +81,18 @@ def get_filters():
                 month = input('January, February, March, April, May, June - ').lower()
                 print()
                 if month not in MONTH_DATA:
-                    print('**ERROR** We do not have data for that month. Please enter one of the months listed above')
+                    print('**ERROR!** We do not have data for that month. Please enter one of the months listed above')
                     continue
                 month = MONTH_DATA[month]
                 print('And which day of the week would you like to analyze?')
                 day = input('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday - ').lower()
                 print()
                 if day not in WEEK_DATA:
-                    print('**ERROR** Please check your spelling and/or enter the full name of the day as listed above')
+                    print('**ERROR!** Please check your spelling and/or enter the full name of the day as listed above')
                     continue
                 day = WEEK_DATA[day]
             else:
-                print('**ERROR** We do not have data for that entry. Please try again')
+                print('**ERROR!** We do not have data for that entry. Please try again')
                 continue
             break
         else:
@@ -218,7 +218,7 @@ def user_stats(df):
 
     print()
     if 'Birth Year' not in df:
-        print('User birth data is not available for this city.')
+        print('Sorry, user birth data is not available for this city.')
     else:
         birth = df.groupby('Birth Year', as_index=False).count()
         print('Earliest year of birth was: {}.'.format(int(birth['Birth Year'].min())))
@@ -236,7 +236,7 @@ def display_raw_data(df):
     elif d1 == 'no':
         d1 = False
     else:
-        print("**ERROR** Please enter 'yes' or 'no' ")
+        print("**ERROR!** Please enter 'yes' or 'no' ")
         display_data(df)
         return
 
@@ -251,7 +251,7 @@ def display_raw_data(df):
             elif d1 == 'no':
                 break
             else:
-                print("**ERROR** Please enter 'yes' or 'no' ")
+                print("**ERROR!** Please enter 'yes' or 'no' ")
                 return
 
 
