@@ -198,7 +198,7 @@ def trip_duration_stats(df):
 def user_stats(df):
     """Displays statistics on bikeshare users."""
 
-    print('\nCalculating User Stats...\n')
+    print('\nCalculating User Statistics...\n')
     start_time = time.time()
 
     print()
@@ -209,7 +209,7 @@ def user_stats(df):
 
     print()
     if 'Gender' not in df:
-        print('User gender data not avalible for this city')
+        print('Sorry, user gender data not avalible for this city')
     else:
         gender_of_users = df.groupby('Gender', as_index=False).count()
         print('The user gender counts are: ')
@@ -221,11 +221,11 @@ def user_stats(df):
         print('Sorry, user birth data is not available for this city.')
     else:
         birth = df.groupby('Birth Year', as_index=False).count()
-        print('Earliest year of birth was: {}.'.format(int(birth['Birth Year'].min())))
-        print('Most recent year of birth was: {}.'.format(int(birth['Birth Year'].max())))
-        print('Most common year of birth year was: {}.'.format(int(birth.iloc[birth['Start Time'].idxmax()]['Birth Year'])))
+        print('The earliest year of birth was: {}.'.format(int(birth['Birth Year'].min())))
+        print('The most recent year of birth was: {}.'.format(int(birth['Birth Year'].max())))
+        print('The most common year of birth year was: {}.'.format(int(birth.iloc[birth['Start Time'].idxmax()]['Birth Year'])))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis query took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 def display_raw_data(df):
